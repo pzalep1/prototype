@@ -1,6 +1,9 @@
+import { SchemaFactory } from "@nestjs/mongoose";
+import { Types } from "mongoose";
+
 export class file {
 
-    public id: string;
+    public id: Types.ObjectId;
 
     public date: Date;
 
@@ -9,4 +12,12 @@ export class file {
     public note: string;
 
     public location: string;
+
+    constructor(partial: Partial<file>) {
+        Object.assign(this, partial);
+    }
 }
+
+export type fileDocument = file & Document;
+
+export const fileSchema = SchemaFactory.createForClass(file);
