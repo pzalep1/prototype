@@ -7,6 +7,7 @@ export class BoardCreateDTO{
 
     @IsNotEmpty()
     @Type(() => Types.Object)
+    @IsArray()
     public users: Types.ObjectId[];
 
     @IsNotEmpty()
@@ -15,22 +16,27 @@ export class BoardCreateDTO{
 
     @IsNotEmpty()
     @Type(() => Types.Object)
+    @IsArray()
     public notes: Types.ObjectId[];
 
     @IsNotEmpty()
     @Type(() => Types.Object)
+    @IsArray()
     public sections: Types.ObjectId[];
 
     @IsNotEmpty()
     @Type(() => Types.Object)
+    @IsArray()
     public files: Types.ObjectId[];
 
     @IsNotEmpty()
     @Type(() => Types.Object)
+    @IsArray()
     public schedules: Types.ObjectId[];
 
     @IsNotEmpty()
     @IsString()
+    @IsOptional()
     public header: string;
 
     constructor(partial: Partial<BoardCreateDTO>){

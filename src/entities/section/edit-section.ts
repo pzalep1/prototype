@@ -6,7 +6,7 @@ import { Types } from 'mongoose';
 export class SectionCreateDTO{
 
     @IsNotEmpty()
-    @Type(() => Types.Object)
+    @Type(() => Types.ObjectId)
     @IsArray()
     public users: Types.ObjectId[];
 
@@ -15,6 +15,7 @@ export class SectionCreateDTO{
     public location: string;
 
     @IsNotEmpty()
+    @
     @Type(() => Types.Object)
     @IsArray()
     public notes: Types.ObjectId[];

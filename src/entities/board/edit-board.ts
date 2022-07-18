@@ -15,6 +15,7 @@ export class BoardEditDTO{
 
     @IsNotEmpty()
     @Type(() => Types.Object)
+    @IsOptional()
     public notes: Types.ObjectId[];
 
     @IsNotEmpty()
@@ -31,6 +32,7 @@ export class BoardEditDTO{
 
     @IsNotEmpty()
     @IsString()
+    @IsOptional()
     public header: string;
 
     constructor(partial: Partial<BoardEditDTO>){
