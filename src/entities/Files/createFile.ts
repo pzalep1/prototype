@@ -4,6 +4,8 @@ import { IsDate, IsString, IsNotEmpty, ValidateNested, isString } from 'class-va
 
 export class fileCreateDTO
  {
+    @IsString()
+    public id: string;
 
     @IsDate()
     @IsNotEmpty()

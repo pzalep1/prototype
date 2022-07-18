@@ -1,10 +1,20 @@
 import { Module } from '@nestjs/common';
+import { MongooseModule } from '@nestjs/mongoose';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { MongooseModule } from '@nestjs/mongoose';
+import { User, UserSchema } from './entities/user/user';
 
 @Module({
-  imports: [],
+  imports: [
+    MongooseModule.forRoot(
+      'mongodb://localhost/inso-2',
+      {
+        useUnifiedTopology: true,
+        useNewUrlParser: true
+      }
+    ),
+    MongooseModule.forFeature([{ name: User.name, schema: UserSchema }])
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
