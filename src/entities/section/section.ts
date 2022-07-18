@@ -1,9 +1,9 @@
 
-import { Prop, Schema } from "@nestjs/mongoose";
+import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 import { Types } from "mongoose";
 
 @Schema()
-export class Board{
+export class Section{
 
     @Prop()
     public users: Types.ObjectId[];
@@ -26,7 +26,9 @@ export class Board{
     @Prop()
     public header: string;
 
-    constructor(partial: Partial<Board>){
+    constructor(partial: Partial<Section>){
         Object.assign(this, partial);
     }
 }
+
+export const SectionSchema = SchemaFactory.createForClass(Section);
