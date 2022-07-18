@@ -3,7 +3,9 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { User, UserSchema } from './entities/user/user';
-import { UserModule } from './modules/file/fileModule';
+import { FileModule } from './modules/file/fileModule';
+import { NoteModule } from './modules/note/noteModule';
+import { UserModule } from './modules/user/user.module';
 
 @Module({
   imports: [
@@ -14,6 +16,8 @@ import { UserModule } from './modules/file/fileModule';
         useNewUrlParser: true
       }
     ),
+    FileModule,
+    NoteModule,
     UserModule
   ],
   controllers: [AppController],

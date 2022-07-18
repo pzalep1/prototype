@@ -18,4 +18,8 @@ export class noteCreateDTO
     @IsNotEmpty()
     @IsBoolean()
     public draft: boolean;
+
+    constructor(partial: Partial<noteCreateDTO>) {
+        Object.assign(this, partial);
+    }
 }
