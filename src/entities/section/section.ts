@@ -1,27 +1,32 @@
+
+import { Prop, Schema } from "@nestjs/mongoose";
+import { Types } from "mongoose";
+
 @Schema()
 export class Board{
 
-    @Prop([Types.ObjectId])
+    @Prop()
     public users: Types.ObjectId[];
 
     @Prop(String)
     public location: string;
 
-    @Prop([Types.ObjectId])
+    @Prop()
     public notes: Types.ObjectId[];
 
-    @Prop([Types.ObjectId])
+    @Prop()
     public files: Types.ObjectId[];
 
-    @Prop(Types.ObjectId)
+    @Prop()
     public creator: Types.ObjectId;
 
-    @Prop(Date)
+    @Prop()
     public date: Date;
 
-    @Prop(String)
+    @Prop()
     public header: string;
 
     constructor(partial: Partial<Board>){
         Object.assign(this, partial);
     }
+}
