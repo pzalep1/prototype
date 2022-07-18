@@ -8,16 +8,12 @@ import { UserUpdateDTO } from './entities/user/userUpdateDTO';
 @Controller()
 export class AppController {
   constructor(
-    private readonly appService: AppService,
-    @InjectModel(User.name) private userModel: Model<any> 
     ) {}
 
   @Patch()
   @UsePipes(ValidationPipe)
-  async getHello(@Body() userUpdates: UserUpdateDTO): Promise<string> {
-    const user = new this.userModel(userUpdates);
-    await user.save();
-    return 'User Created!'
+  async getHello(): Promise<string> {
+    return 'Welcome to the getHello'
   }
 
   @Get('home')
@@ -25,4 +21,3 @@ export class AppController {
     return 'home is working';
   }
 }
-``

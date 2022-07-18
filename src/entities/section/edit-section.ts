@@ -1,9 +1,8 @@
 import {Types} from 'mongoose';
 import { Type } from 'class-transformer';
 import { IsArray, IsNotEmpty, IsString } from 'class-validator';
-import { Types } from 'mongoose';
 
-export class SectionCreateDTO{
+export class SectionCreateDTO {
 
     @IsNotEmpty()
     @Type(() => Types.ObjectId)
@@ -15,23 +14,18 @@ export class SectionCreateDTO{
     public location: string;
 
     @IsNotEmpty()
-    @
-    @Type(() => Types.Object)
     @IsArray()
     public notes: Types.ObjectId[];
 
     @IsNotEmpty()
-    @Type(() => Types.Object)
     @IsArray()
     public files: Types.ObjectId[];
 
     @IsNotEmpty()
-    @Type(() => Types.Object)
     @IsArray()
     public creator: Types.ObjectId[];
 
     @IsNotEmpty()
-    @Type(() => Types.Object)
     public date: Date;
 
     @IsNotEmpty()
