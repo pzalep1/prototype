@@ -10,9 +10,9 @@ export class UserController {
     @InjectModel(User.name) private userModel: Model<any> 
     ) {}
 
-  @Post('/users')
+  @Post('users')
   @UsePipes(ValidationPipe)
-  async getHello(@Body() userUpdates: UserWriteDTO): Promise<string> {
+  async createUser(@Body() userUpdates: UserWriteDTO): Promise<string> {
     const user = new this.userModel(userUpdates);
     await user.save();
     return 'User Created!'

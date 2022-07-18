@@ -8,4 +8,4 @@ import { fileController } from './fileController';
     providers: [fileController],
     exports: [fileController]
 })
-export class UserModule {}
+export class FileModule {}

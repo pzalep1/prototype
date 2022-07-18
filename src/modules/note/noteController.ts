@@ -6,7 +6,7 @@ import { note } from "src/entities/Notes/note";
 export  class noteController{
     constructor(){}
 
-    @Post()
+    @Post('note')
     async createNote(@Body() note: noteCreateDTO){
 
         
