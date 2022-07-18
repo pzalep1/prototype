@@ -18,7 +18,7 @@ export class SectionController {
     }
 
     @Patch('section/:sectionid')
-    async UpdateSection(@Param('sectionId') sectionID: string, @Body() update: Section): Promise<any>{
+    async UpdateSection(@Param('sectionid') sectionID: string, @Body() update: Section): Promise<any>{
         if(!Types.ObjectId.isValid(sectionID)) {
         throw new HttpException('SectionId is not a valid mongo id', HttpStatus.BAD_REQUEST);
         }
