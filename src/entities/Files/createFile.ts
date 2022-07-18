@@ -4,7 +4,7 @@ import { IsDate, IsString, IsNotEmpty, ValidateNested } from 'class-validator';
 
 export class fileCreateDTO
  {
-    IsString()
+    @IsString()
     public id: string;
 
     public date: Date;

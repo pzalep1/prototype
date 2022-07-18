@@ -1,12 +1,15 @@
-import { Controller, Get } from '@nestjs/common';
+import { Body, Controller, Get, Patch, UsePipes, ValidationPipe } from '@nestjs/common';
 import { AppService } from './app.service';
+import { UserUpdateDTO } from './entities/user/userUpdateDTO';
 
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get()
-  getHello(): string {
+  @Patch()
+  @UsePipes(ValidationPipe)
+  getHello(@Body() userUpdates: UserUpdateDTO): string {
+    console.log(userUpdates)
     return this.appService.getHello();
   }
 
