@@ -11,4 +11,4 @@ import { Board, BoardSchema } from '../../entities/board/board'
   providers: [],
   
 })
-export class BoardModule {}
+export class BoardModule {} 
