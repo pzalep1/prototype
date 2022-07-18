@@ -11,8 +11,8 @@ export  class fileController{
         @InjectModel(file.name) private fileModel: Model<fileDocument>
     ){}
 
-    @Post('/file')
-    async createFile(@Body() file: fileCreateDTO){
+    @Post('file')
+    async createNote(@Body() note: fileCreateDTO){
 
         const newFile = new this.fileModel({...file, 'date': new Date()});
         newFile.save();

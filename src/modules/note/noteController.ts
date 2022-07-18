@@ -11,7 +11,7 @@ export  class noteController{
         @InjectModel(note.name) private noteModel: Model<noteDocument>
     ){}
 
-    @Post('/note')
+    @Post('note')
     async createNote(@Body() note: noteCreateDTO){
 
         if(note == null){
