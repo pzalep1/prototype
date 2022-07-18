@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Patch, Post, UsePipes, ValidationPipe } from '@nestjs/common';
+import { Body, Controller, Get, Param, Patch, Post, UsePipes, ValidationPipe } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { User } from '../../entities/user/user';
@@ -16,5 +16,12 @@ export class UserController {
     const user = new this.userModel(userUpdates);
     await user.save();
     return 'User Created!'
+  }
+
+  @Get("users/:userid")
+
+  async UpdateUser(@Param('userid') userid:string): Promise<any>{
+    console.log("userid")
+
   }
 }
