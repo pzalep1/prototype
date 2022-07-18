@@ -7,7 +7,7 @@ import { User, UserSchema } from './entities/user/user';
 @Module({
   imports: [
     MongooseModule.forRoot(
-      'mongodb://localhost/inso',
+      'mongodb://localhost/inso-2',
       {
         useUnifiedTopology: true,
         useNewUrlParser: true
