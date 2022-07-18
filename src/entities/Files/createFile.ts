@@ -1,17 +1,25 @@
 
 //import { ApiProperty, ApiTags } from '@nestjs/swagger';
-import { IsDate, IsString, IsNotEmpty, ValidateNested } from 'class-validator';
+import { IsDate, IsString, IsNotEmpty, ValidateNested, isString } from 'class-validator';
 
 export class fileCreateDTO
  {
     @IsString()
     public id: string;
 
+    @IsDate()
+    @IsNotEmpty()
     public date: Date;
 
+    @IsString()
+    @IsNotEmpty()
     public creator: string;
 
+    @IsString()
+    @IsNotEmpty()
     public note: string;
 
+    @IsString()
+    @IsNotEmpty()
     public location: string;
 }
