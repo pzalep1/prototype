@@ -20,8 +20,8 @@ export class fileCreateDTO
     @IsNotEmpty()
     public creator: Types.ObjectId;
 
-    @IsString()
     @IsNotEmpty()
+    @IsString()
     public note: string;
 
     @IsString()

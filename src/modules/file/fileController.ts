@@ -12,7 +12,7 @@ export  class fileController{
     ){}
 
     @Post('file')
-    async createNote(@Body() note: fileCreateDTO){
+    async createNote(@Body() file: fileCreateDTO){
 
         const newFile = new this.fileModel({...file, 'date': new Date()});
         newFile.save();
@@ -35,7 +35,7 @@ export  class fileController{
         }
 
         const res = await foundFile.updateOne(file);
-        return 'Note updated!';
+        return 'File updated!';
     }
 
 }
