@@ -1,11 +1,16 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { User, UserSchema } from './entities/user/user';
+import { FileModule } from './modules/file/fileModule';
+import { NoteModule } from './modules/note/noteModule';
+import { UserModule } from './modules/user/user.module';
+
 
 @Module({
   imports: [
+    UserModule,
+    NoteModule,
+    FileModule,
     MongooseModule.forRoot(
       'mongodb://localhost/inso-2',
       {
@@ -13,9 +18,8 @@ import { User, UserSchema } from './entities/user/user';
         useNewUrlParser: true
       }
     ),
-    MongooseModule.forFeature([{ name: User.name, schema: UserSchema }])
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [],
 })
 export class AppModule {}

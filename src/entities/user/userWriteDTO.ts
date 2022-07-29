@@ -1,3 +1,4 @@
+import { Type } from "class-transformer";
 import { IsDate, IsDefined, IsEmail, IsString, Length } from "class-validator";
 
 export class UserWriteDTO {
@@ -10,6 +11,7 @@ export class UserWriteDTO {
     l_name: string;
 
     @IsDate()
+    @Type(() => Date)
     @IsDefined()
     birthday: Date;
 

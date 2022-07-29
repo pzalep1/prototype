@@ -5,7 +5,7 @@ import { fileCreateDTO } from "src/entities/Files/createFile";
 export  class fileController{
     constructor(){}
 
-    @Post()
+    @Post('file')
     async createNote(@Body() note: fileCreateDTO){
 
         

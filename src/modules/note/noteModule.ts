@@ -8,4 +8,4 @@ import { noteController } from './noteController';
     providers: [noteController],
     exports: [noteController]
 })
-export class UserModule {}
+export class NoteModule {}
