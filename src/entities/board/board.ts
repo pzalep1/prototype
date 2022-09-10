@@ -1,5 +1,5 @@
 import { Types } from 'mongoose';
-import { Prop, Schema } from '@nestjs/mongoose';
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 
 @Schema()
 export class Board{
@@ -28,7 +28,8 @@ export class Board{
     constructor(partial: Partial<Board>){
         Object.assign(this, partial);
     }
+    
 
 }
 
-
+export const BoardSchema = SchemaFactory.createForClass(Board);
